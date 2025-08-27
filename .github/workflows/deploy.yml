@@ -9,12 +9,12 @@ env:
   MONGODB_DB_NAME: gha-demo # <-- environment variable on the workflow level (available to all jobs and steps)
 jobs:
   test:
-    env:
+    environment: testing # <-- used to reference ENVIRONMENT
+    env: # <-- used to reference ENV VARIABLES
       MONGODB_CLUSTER_ADDRESS: cluster0.9ckgype.mongodb.net # <-- env variables on the job level (available only to the given job)
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 8080
-    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
