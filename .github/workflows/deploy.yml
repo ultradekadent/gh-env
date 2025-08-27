@@ -10,7 +10,7 @@ env:
 jobs:
   test:
     env:
-      MONGODB_CLUSTER_ADDRESS: cluster0.9ckgype.mongodb.net # <-- env variables on the job level
+      MONGODB_CLUSTER_ADDRESS: cluster0.9ckgype.mongodb.net # <-- env variables on the job level (available only to the given job)
       MONGODB_USERNAME: mnyszka
       MONGODB_PASSWORD: wDpwWnwU62FnUIEu
       PORT: 8080
@@ -42,4 +42,4 @@ jobs:
       - name: Output information
         run: |        
           echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
-          echo "MONGODB_DB_NAME: $env:MONGODB_DB_NAME
+          echo "MONGODB_DB_NAME: $env:MONGODB_DB_NAME"
